@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>INVERNADERO</title>
+<meta charset="ISO-8859-1">
+<style>
+  /* Cervantes Beltrán Karen Cristina*/
+
+        input [type="range"]::after{
+        content: attr(value);
+     }
+     :root {
+    --blanco: #ffffff;
+    --oscuro:#212121;
+    --primario:#FFC107;
+    --secundario: #0097A7;
+    --gris:#757575;
+}
+ 
+html{
+    font-size: 62.5%;
+    background-color: #ADD8E6;
+}
+body{
+    font-size: 16px;
+    font-family: 'Krub', sans-serif;
+}
+.titulo {
+            text-align: center;
+            font-size: 3.8rem;
+}
+.titulo span{ /*Buscar spam dentro de la clase titulo */
+    font-size: 2rem;
+}
+
+.boton{
+
+		width:                 3.5em;
+		height:                3.5em;
+		margin:                0.25em;
+		margin:                0.25em;
+		padding:               0;
+		border:                none;
+		box-shadow:            0px 4px 5px rgba(0, 0, 0, 0.2);
+		}
+		
+.boton:hover{
+		background-color:      #F33;
+	}
+	
+	.boton2{
+
+		width:                 7.5em;
+		height:                3.5em;
+		margin:                0.25em;
+		margin:                0.25em;
+		padding:               0;
+		border:                none;
+		box-shadow:            0px 4px 5px rgba(0, 0, 0, 0.2);
+		text-align :center;
+		font-size: 1 rem;
+		}
+		
+.boton2:hover{
+		background-color:      #3825C5;
+	}
+	
+#demo{
+   font-size: 20px;
+  }
+
+
+.Contenedor {
+    width: 120rem;
+    margin: 0 auto;
+}
+
+.nav-bg{
+    background-color: var(--secundario) ;
+     padding: 1rem;
+ 
+}
+.Navegacion {
+background-color: var(--secundario) ;
+
+display: flex;
+justify-content: space-between;
+}
+.Navegacion a{
+    color:var(--blanco);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 1rem;
+}
+.Navegacion a:hover{
+    background-color: var(--primario) ;
+    color:var(--oscuro);}
+
+
+.container{
+		width:                 100%;
+		padding:               0;
+		margin:                0;
+		box-sizing:            border-box;
+		display:               flex;
+		flex-direction:        row;
+		}
+.column{
+		flex:                  1 1 0;
+		display:               flex;
+		flex-direction:        column;
+		text-align:center;
+
+	}
+	.column2{
+		flex:                  1 1 0;
+		display:               flex;
+		flex-direction:        column;
+	}
+		.column3{
+		flex:                  1 1 0;
+		display:               flex;
+		flex-direction:        row;
+	}
+.column4{
+		flex:                  1 1 0;
+		display:               flex;
+		flex-direction:        column;
+		text-align:center;
+		align-items :center;
+		
+	}
+    </style>
+
+
+</head>
+<body>
+
+
+    <header>
+        <h1 class="titulo">INVERNADERO</h1>
+    </header>
+    <div class="nav-bg">
+   
+    </div>
+
+
+    <section>
+        <h2 class="titulo">Controles</h2>
+    </section>
+    
+    
+    
+    
+<section class="container">
+<article class="column2">
+	
+
+<article class="column3">
+    <p>RADIADOR</p>
+    &nbsp;&nbsp; 
+    <p>
+        <label for= "pot">(0-100):</label>
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; 
+        <input type="range" id="pot" name="pot" min ="0" max="100" step ="1" value ="5" onchange=
+         "submit('Radiador', document.getElementById('outpot').value=value, 'Cambio Potencia:') "list="tiket">
+        <output id="outpot" name ="outpot" form = "pot" >25 </output>
+        <datalist id="tiket">  
+          <option value="50"></option>
+         </datalist>   
+         
+    </p>
+    <button class="boton" onclick="submit('ONOFFRad','ON','Radiador')">ON</button>
+		<button class="boton" onclick="submit('ONOFFRad','OFF','Radiador')">OFF</button>
+</article>
+   
+<article class="column3">
+    <p>TEMPERATURA</p>
+     &nbsp;&nbsp; 
+    <p>
+        <label for= "potem">(0-100):</label>
+         &nbsp;&nbsp; 
+        <input type="range" id="potem" name="potem" min ="0" max="100" step ="1" value ="5" onchange=
+         "submit('Temperatura', document.getElementById('outpotem').value=value, 'Cambio Temperatura:') "list="tiket">
+        <output id="outpotem" name ="outpotem" form = "potem" >25 </output>
+        <datalist id="tiket">  
+          <option value="50"></option>
+         </datalist>   
+    </p>
+     <button class="boton" onclick="submit('ONOFFTEMP','ON','TEMPERATURA')">ON</button>
+     <button class="boton" onclick="submit('ONOFFTEMP','OFF','TEMPERATURA')">OFF</button>
+</article>
+
+
+<article class="column3">
+	
+<p>VENTILADOR </p>
+     &nbsp;&nbsp; 
+    <p>
+        <label for= "poven">(0-100):</label>
+         &nbsp;&nbsp;  &nbsp;&nbsp;  
+        <input type="range" id="poven" name="poven" min ="0" max="100" step ="1" value ="5" onchange=
+          "submit('Ventilador', document.getElementById('outpotven').value=value, 'Cambio potencia Ventilador:') "  list="tiket">
+        <output id="outpotven" name ="outpotven" form = "potven" >25 </output>
+        <datalist id="tiket">  
+          <option value="50"></option>
+         </datalist>   
+    </p>
+     <button class="boton" onclick="submit('ONOFFVentilador','ON','VENTILADOR')">ON</button>
+	<button class="boton" onclick="submit('ONOFFVentilador','OFF','VENTILADOR')">OFF</button>
+</article>
+
+
+</article>
+
+  
+<article class="column4">
+	
+
+   
+<article class="column3">
+    <p>IRRIGACION</p>
+
+		<button class="boton" onclick="submit('ONOFFIrrig','ON','IRRIGACION')">ON</button>
+		<button class="boton" onclick="submit('ONOFFIrrig','OFF','IRRIGACION')">OFF</button>
+</article>
+</article>
+
+
+
+<article class="column4">
+
+
+
+       <h3>PROGRAMA CICLOS <h3>
+		<input  type="number" id="myInput">
+        <h2 id="reloj">00:00</h2>
+
+<input class="boton2" value="iniciar" onclick=" principal(document.getElementById('myInput').value)" >
+
+         
+    </div>
+    
+   
+
+
+
+</article>
+
+
+
+
+
+</section>
+
+  
+
+
+    
+<section>
+    <h2>HISTORICO</h2>
+    
+    
+    <div><label ></label>
+        <textarea id= "demo" rows="50" cols="100"  ></textarea>
+    </div>
+    
+    
+</fieldset>
+
+
+    </form>
+</section>
+
+
+</body>
+
+
+
+</html>
+
+
+
+
+<script language="javascript">
+<!--
+/* codigo tomado de */
+function principal (hora){
+	document.getElementById('demo').innerHTML+= '-----CICLO INICIADO----';
+	submit('ONOFFIrrig','ON','IRRIGACION');
+	submit('ONOFFTEMP','ON','TEMPERATURA');
+     const startingMinutes =hora;
+        let time=startingMinutes * 60;
+        
+        const countdownEl=document.getElementById('reloj');
+        setInterval(updateCountdown,1000);
+    function updateCountdown(){
+        if (time== -2){
+	countdownEl.innerHTML= 0+ ":" + 0;
+	}
+	else {
+        const minutes = Math.floor(time / 60);
+        let seconds=time % 60;
+        seconds= seconds < countdownEl ? '0' +seconds: seconds;
+        countdownEl.innerHTML= minutes+ ":" + seconds;
+      }
+	if (time >=0){
+         time --;
+	 }
+        
+	if (time==-1){
+	    time=-2;
+	    document.getElementById('demo').innerHTML+= '\n'+'-----CICLO TERMINADO-----';
+	    submit('ONOFFIrrig','OFF','IRRIGACION');
+	    submit('ONOFFTEMP','OFF','TEMPERATURA');
+
+        }
+        else {
+	      
+            time= time;
+            return;
+        }
+       
+        
+ }
+ 
+ 
+}
+
+
+function submit(action, value, frase){
+	document.getElementById('demo').innerHTML+= '\n' + frase +'&nbsp'+value+'\n';
+	
+	if ( value > 40 && frase== "Cambio Temperatura:")
+	{
+		document.getElementById('demo').innerHTML+= '\n'+'----LIMITE MAXIMO DE TEMPERATURA-----';
+		submit('ONOFFVentilador','ON','VENTILADOR');
+		submit('ONOFFRad','OFF','Radiador');
+		
+	}
+	if ((value < 40 && value >26) && frase== "Cambio Temperatura:")
+	{
+		document.getElementById('demo').innerHTML+= '\n'+'-----TEMPERATURA DENTRO DE RANGO IDEAL----- '+'\n';
+		submit('ONOFFRad','OFF','Radiador');
+		submit('ONOFFVentilador','OFF','VENTILADOR');
+		submit('ONOFFTEMP','ON','TEMPERATURA');
+	}	
+	if ( value <25 && frase== "Cambio Temperatura:")
+	{
+		document.getElementById('demo').innerHTML+= '\n'+'----LIMITE MINIMO DE TEMPERATURA-----'+'\n';
+		submit('ONOFFRad','ON','Radiador');
+		submit('ONOFFVentilador','OFF','VENTILADOR');
+		
+		}
+	
+	
+	
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST", window.location.href, true);
+	xhr.setRequestHeader('Content-Type', 'application/json');
+	xhr.send(JSON.stringify({
+		'action' : action,
+		'value' :  value,
+	}));
+}
+//-->
+</script>
